@@ -32,7 +32,9 @@ jobs:
 
     - name: Install Docker
       shell: bash
-      run: brew cask install docker
+      run: |
+        brew cask install docker
+        open /Applications/Docker.app
 
     - name: Set up JDK
       uses: actions/setup-java@v1
