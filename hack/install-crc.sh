@@ -151,7 +151,7 @@ cp ~/.crc/bin/oc $BINDIR/kubectl
 eval $(crc oc-env)
 ​
 echo "Executing OC Login..."
-oc login ${OCP_HOST} -u kubeadmin -p ${KUBE_PASS}
+oc login ${OCP_HOST} -u kubeadmin -p ${KUBE_PASS}  --insecure-skip-tls-verify=true
 ​
 oc projects
 kubectl get nodes
