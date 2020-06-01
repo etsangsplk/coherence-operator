@@ -30,6 +30,10 @@ jobs:
       with:
         fetch-depth: 0
 
+    - name: Install Docker
+      shell: bash
+      run: brew cask install docker
+
     - name: Set up JDK
       uses: actions/setup-java@v1
       with:
