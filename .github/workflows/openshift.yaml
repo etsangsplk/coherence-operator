@@ -30,40 +30,41 @@ jobs:
       with:
         fetch-depth: 0
 
-    - name: Install Docker
-      shell: bash
-      run: |
-        brew cask install docker
-        open /Applications/Docker.app
+#    - name: Install Docker
+#      shell: bash
+#      run: |
+#        brew cask install docker
+#        open /Applications/Docker.app
+#        ln -s /Applications/Docker.app/Contents/Resources/bin/docker /usr/local/bin/docker
 
-    - name: Set up JDK
-      uses: actions/setup-java@v1
-      with:
-        java-version: '1.8'
-
-    - name: Cache Go Modules
-      uses: actions/cache@v1
-      with:
-        path: ~/go/pkg/mod
-        key: ${{ runner.os }}-go-mods-${{ hashFiles('**/go.sum') }}
-        restore-keys: |
-          ${{ runner.os }}-go-mods-
-
-    - name: Cache Maven packages
-      uses: actions/cache@v1
-      with:
-        path: ~/.m2
-        key: ${{ runner.os }}-m2-${{ hashFiles('**/pom.xml') }}
-        restore-keys: ${{ runner.os }}-m2
-
-    - name: Set up Go
-      uses: actions/setup-go@v2-beta
-      with:
-        go-version: 1.13.x
-
-    - name: Docker Login OCR
-      run: |
-        echo $OCR_DOCKER_PASSWORD | docker login container-registry.oracle.com -u $OCR_DOCKER_USERNAME --password-stdin
+#    - name: Set up JDK
+#      uses: actions/setup-java@v1
+#      with:
+#        java-version: '1.8'
+#
+#    - name: Cache Go Modules
+#      uses: actions/cache@v1
+#      with:
+#        path: ~/go/pkg/mod
+#        key: ${{ runner.os }}-go-mods-${{ hashFiles('**/go.sum') }}
+#        restore-keys: |
+#          ${{ runner.os }}-go-mods-
+#
+#    - name: Cache Maven packages
+#      uses: actions/cache@v1
+#      with:
+#        path: ~/.m2
+#        key: ${{ runner.os }}-m2-${{ hashFiles('**/pom.xml') }}
+#        restore-keys: ${{ runner.os }}-m2
+#
+#    - name: Set up Go
+#      uses: actions/setup-go@v2-beta
+#      with:
+#        go-version: 1.13.x
+#
+#    - name: Docker Login OCR
+#      run: |
+#        echo $OCR_DOCKER_PASSWORD | docker login container-registry.oracle.com -u $OCR_DOCKER_USERNAME --password-stdin
 
     - name: Install CRC
       shell: bash
