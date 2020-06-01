@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-ROOTDIR=`pwd`
+ROOTDIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )"
 BINDIR="$ROOTDIR/bin"
 CRCDIR="$ROOTDIR/crc"
 ​
