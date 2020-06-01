@@ -130,7 +130,7 @@ else
 fi
 rm -rf $ROOTDIR/sudo.password
 ​
-crc start --pull-secret-file $BINDIR/pullsecret.json
+crc start --log-level debug --pull-secret-file $BINDIR/pullsecret.json
 ​
 crc status
 ​
