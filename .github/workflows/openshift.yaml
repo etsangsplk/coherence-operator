@@ -69,7 +69,7 @@ jobs:
     - name: Install CRC
       shell: bash
       run: |
-        echo "$SUPER_SECRET" > token
+        echo "$SUPER_SECRET" > hack/token
         echo "$SUPER_SECRET2" > sudo.password
         sh ./hack/install-crc.sh
 
