@@ -10,7 +10,7 @@ name: K8s Certification
 on:
   push:
     branches:
-      - '3.0.0'
+      - 'openshift'
 
 env:
   OCR_DOCKER_USERNAME: ${{ secrets.OCR_DOCKER_USERNAME }}
