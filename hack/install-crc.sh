@@ -17,13 +17,13 @@ if [ ! -f $ROOTDIR/install.properties ];then
 fi
 ​
 # stop and delete any previous CRC environment that is running
-pids=`ps -ef | grep crc | grep -v grep | grep -v install_CRC | awk '{print $2}' || true`
+pids=`ps -ef | grep crc | grep -v grep | grep -v install-crc | awk '{print $2}' || true`
 if [ "$pids" != "" ];then
     crc stop || true
     crc delete --clear-cache -f || true
 fi
 ​
-pids=`ps -ef | grep crc | grep -v grep | grep -v install_CRC | awk '{print $2}' || true`
+pids=`ps -ef | grep crc | grep -v grep | grep -v install-crc | awk '{print $2}' || true`
 for i in $pids; do
   echo "Terminating pid:$i"
   ps -ef | grep $i
